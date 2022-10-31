@@ -1,0 +1,24 @@
+#include "pt4.h"
+using namespace std;
+
+void Solve()
+{
+    Task("TheMassiv10");
+    int* x;
+    int n;
+    pt >> n;
+    x = new int[n];
+    int max = x[0];
+    int min = 9999999999999;
+    for (int i = 0; i < n; i++) {
+        pt >> x[i];
+    }
+    for (int i = 1; i < (n / 2); i++) {
+        if (x[i] > max) max = x[i];
+    }
+    for (int i = (n / 2); i < n; i++) {
+        if (x[i] < min)
+            min = x[i];
+    }
+    pt << max << min;
+}
